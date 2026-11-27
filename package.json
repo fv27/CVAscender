@@ -1,0 +1,34 @@
+{
+  "name": "cvascender",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:phone": "node scripts/dev.mjs -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "audit": "npm audit --audit-level=high",
+    "hooks": "git config core.hooksPath .githooks",
+    "check": "npm audit --audit-level=high && next build",
+    "ios:data": "node scripts/export-ios-data.mjs",
+    "club-media": "node scripts/find-club-media.mjs",
+    "preview": "node scripts/cloudflare.mjs preview",
+    "deploy": "node scripts/cloudflare.mjs deploy"
+  },
+  "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.19",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.119.0",
+    "next": "^16.4.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "server-only": "^0.0.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.19",
+    "wrangler": "^4.168.0"
+  }
+}

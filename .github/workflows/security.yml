@@ -1,0 +1,28 @@
+# Runs on every push and pull request, and weekly.
+name: security
+on:
+  push:
+  pull_request:
+  schedule: [{ cron: '17 6 * * 1' }]
+permissions:
+  contents: read
+jobs:
+  secrets:
+    name: Scan for leaked secrets (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }   # scan the WHOLE history, not just the last commit
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  dependencies:
+    name: Scan dependencies (npm audit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm audit --audit-level=high
+      - run: npm run build

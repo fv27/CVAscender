@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --paper: 255 255 255;      /* page background: white */
+  --soft: 243 246 251;       /* subtle fills */
+  --card: 255 255 255;
+  --ink: 16 24 40;
+  --ink-soft: 52 64 84;
+  --ink-muted: 102 112 133;
+  --line: 226 231 240;
+  --lapis: 38 97 156;        /* lapis blue  #26619C */
+  --lapis-deep: 24 62 105;
+  --lapis-soft: 230 239 248;
+  --pumpkin: 255 117 24;     /* pumpkin orange #FF7518 */
+  --pumpkin-soft: 255 238 224;
+}
+.dark {
+  color-scheme: dark;
+  --paper: 9 14 26;
+  --soft: 20 28 46;
+  --card: 15 22 38;
+  --ink: 236 240 247;
+  --ink-soft: 196 204 218;
+  --ink-muted: 140 151 172;
+  --line: 36 47 70;
+  --lapis: 88 145 210;
+  --lapis-deep: 22 52 92;
+  --lapis-soft: 25 42 70;
+  --pumpkin: 255 128 46;
+  --pumpkin-soft: 62 36 18;
+}
+html, body { background: rgb(var(--paper)); color: rgb(var(--ink)); transition: background-color .25s ease, color .25s ease; }
+body { font-family: Geist, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+/* Hide scrollbars on the snap feed but keep it scrollable */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* Subtle paper grain */
+.grain { background-image: radial-gradient(rgb(var(--lapis) / .05) 1px, transparent 1px); background-size: 4px 4px; }
+
+@layer components {
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-card px-3.5 py-2 text-sm font-medium text-ink-soft transition hover:border-signal active:scale-[.97]; }
+  .chip-on { @apply border-lapis bg-lapis text-white hover:border-lapis; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition active:scale-[.97] disabled:opacity-40 disabled:pointer-events-none; }
+  .btn-primary { @apply btn bg-lapis text-white hover:brightness-110; }
+  .btn-signal { @apply btn bg-signal text-white hover:brightness-105; }
+  .btn-ghost { @apply btn border border-line bg-card text-ink hover:border-ink/40; }
+  .field { @apply w-full rounded-2xl border border-line bg-card px-4 py-3.5 text-[15px] text-ink outline-none transition placeholder:text-ink-muted focus:border-lapis; }
+  .eyebrow { @apply font-mono text-[11px] uppercase tracking-[.14em] text-ink-muted; }
+  /* Codecademy-style typewriter metadata label */
+  .label { @apply font-mono text-[11px] font-medium uppercase tracking-[.12em] text-ink-muted; }
+  .eyebrow::before { content: ''; @apply mr-2 inline-block h-[7px] w-[7px] -translate-y-px rounded-full bg-signal align-middle; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+  .print-area { box-shadow: none !important; border: none !important; }
+}
+
+/* Status badges that work in both themes */
+@layer components {
+  .badge-ok { @apply bg-emerald-50 text-emerald-800 dark:bg-emerald-400/15 dark:text-emerald-300; }
+  .badge-warn { @apply bg-amber-50 text-amber-800 dark:bg-amber-400/15 dark:text-amber-300; }
+  .text-ok { @apply text-emerald-700 dark:text-emerald-400; }
+  .text-warn { @apply text-amber-700 dark:text-amber-400; }
+}
+
+/* We draw our own clear button in the search bar. */
+input[type='search']::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+
+/* ---- 2026 redesign (Mobbin references: TikTok, X, Reddit, Mindtrip, Perplexity, Shopify) ---- */
+.font-display { font-weight: 700; letter-spacing: -.035em; }
+.font-display em { font-style: normal; }
+@layer components {
+  /* Interest pills with a + / ✓ — TikTok & X "pick your interests" */
+  .pill { @apply inline-flex items-center gap-2 rounded-full border border-line bg-card px-4 py-2.5 text-[15px] font-semibold text-ink transition active:scale-[.97] hover:border-ink/30; }
+  .pill-on { @apply border-lapis bg-lapis text-white hover:border-lapis; }
+  /* Perplexity-style text tabs */
+  .tab { @apply relative shrink-0 whitespace-nowrap px-1 pb-2 pt-1 text-[15px] font-semibold text-ink-muted transition hover:text-ink; }
+  .tab-on { @apply text-ink after:absolute after:inset-x-1 after:-bottom-px after:h-[3px] after:rounded-full after:bg-signal; }
+  /* Tripadvisor-style outlined type label */
+  .tag { @apply inline-flex items-center rounded-md border border-ink/70 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-ink; }
+}
+
+/* Slow "Ken Burns" zoom on the photo of the reel you're looking at */
+@keyframes kenburns { from { transform: scale(1) translate(0, 0); } to { transform: scale(1.12) translate(-2%, -2%); } }
+.kenburns { animation: kenburns 16s ease-in-out infinite alternate; }
+@media (prefers-reduced-motion: reduce) { .kenburns { animation: none; } }

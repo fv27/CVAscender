@@ -1,0 +1,88 @@
+{
+  "identifier" : "4C1F3A2B",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_locale" : "en_CH",
+    "_storefront" : "CHE"
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21500001",
+      "localizations" : [
+
+      ],
+      "name" : "CVAscender Plus",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "15.00",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "21500002",
+          "introductoryOffer" : {
+            "internalID" : "21500004",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "Full access to CVAscender, billed yearly",
+              "displayName" : "CVAscender Plus (yearly)",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "cvascender.plus.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "CVAscender Plus Yearly",
+          "subscriptionGroupID" : "21500001",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1.50",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "21500003",
+          "introductoryOffer" : {
+            "internalID" : "21500005",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "Full access to CVAscender, billed monthly",
+              "displayName" : "CVAscender Plus (monthly)",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "cvascender.plus.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "CVAscender Plus Monthly",
+          "subscriptionGroupID" : "21500001",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

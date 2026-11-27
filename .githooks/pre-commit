@@ -1,0 +1,16 @@
+#!/bin/sh
+# Blocks commits that contain env files or things that look like secrets.
+# Enable once with:  npm run hooks
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+for f in $staged; do
+  case "$f" in
+    .env|.env.*) [ "$f" != ".env.example" ] && { echo "✋ Refusing to commit $f (secrets). Remove it with: git rm --cached $f"; exit 1; } ;;
+  esac
+done
+if git diff --cached -U0 -- . ':(exclude).env.example' ':(exclude)package-lock.json' | grep -E '^\+' | grep -E -i \
+  'sk-ant-[a-z0-9_-]{10,}|sk-(proj-)?[A-Za-z0-9_-]{20,}|sb_secret_|service_role|eyJhbGciOi[A-Za-z0-9_-]{20,}\.|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|UPSTASH_REDIS_REST_TOKEN=.+|TURNSTILE_SECRET_KEY=.+|DATA_ENCRYPTION_KEY=.+' >/dev/null; then
+  echo "✋ This commit looks like it contains a secret (API key, token or private key)."
+  echo "   Move it to .env.local, then try again. (Bypass only if you're sure: git commit --no-verify)"
+  exit 1
+fi
+exit 0

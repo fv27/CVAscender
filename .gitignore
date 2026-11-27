@@ -1,0 +1,17 @@
+node_modules
+.next
+.env
+.env.local
+.vercel
+.DS_Store
+.env.*
+!.env.example
+*.pem
+*.key
+.data
+
+# Cloudflare build output
+.open-next
+.wrangler
+.dev.vars
+keys.env

@@ -1,0 +1,7 @@
+ios
+scripts
+.githooks
+*.md
+!README.md
+.dev.vars
+keys.env

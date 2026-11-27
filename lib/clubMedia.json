@@ -1,0 +1,117 @@
+{
+  "_about": {
+    "note": "Real photos and logos for club listings. Fill and check with: npm run club-media. Entries without \"checked\" are only suggestions and are never shown. Delete any entry that looks wrong."
+  },
+  "club-basketball-fribourg-olympic": {
+    "site": "https://www.fribourg-olympic.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-bsc-young-boys": {
+    "site": "https://www.bscyb.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-fc-aarau": {
+    "site": "https://www.fcaarau.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-fc-basel": {
+    "site": "https://www.fcb.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-fc-lugano": {
+    "site": "https://www.fclugano.com/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-fc-luzern": {
+    "site": "https://www.fcl.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-fc-schaffhausen": {
+    "site": "https://www.fcschaffhausen.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-fc-st-gallen": {
+    "site": "https://www.fcsg.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-fc-thun": {
+    "site": "https://www.fcthun.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-fc-wil": {
+    "site": "https://www.fcwil.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-fc-winterthur": {
+    "site": "https://www.fcwinterthur.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-fc-zurich": {
+    "site": "https://www.fcz.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-grasshopper-club-zurich": {
+    "site": "https://www.gcz.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-neuchatel-xamax-fcs": {
+    "site": "https://www.xamax.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-football-us-terre-sainte-usts": {
+    "site": "https://www.usts.ch/",
+    "source": "provided by the owner"
+  },
+  "club-handball-kadetten-schaffhausen": {
+    "site": "https://www.kadettensh.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-handball-pfadi-winterthur": {
+    "site": "https://www.pfadiwinterthur.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-handball-wacker-thun": {
+    "site": "https://www.wackerthun.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-icehockey-ehc-biel": {
+    "site": "https://www.ehcb.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-icehockey-ev-zug": {
+    "site": "https://www.evz.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-icehockey-hc-ambri-piotta": {
+    "site": "https://www.hcap.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-icehockey-hc-davos": {
+    "site": "https://www.hcd.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-icehockey-hc-fribourg-gotteron": {
+    "site": "https://www.gotteron.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-icehockey-hc-lugano": {
+    "site": "https://www.hclugano.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-icehockey-sc-bern": {
+    "site": "https://www.scb.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-icehockey-sc-rapperswil-jona-lakers": {
+    "site": "https://www.lakers.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-icehockey-scl-tigers": {
+    "site": "https://www.scltigers.ch/",
+    "source": "suggested — not checked yet"
+  },
+  "club-icehockey-zsc-lions": {
+    "site": "https://www.zsclions.ch/",
+    "source": "suggested — not checked yet"
+  }
+}

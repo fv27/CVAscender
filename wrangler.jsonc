@@ -1,0 +1,21 @@
+{
+	// Cloudflare Workers settings for CVAscender (used by `npm run deploy`).
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "cvascender",
+	"compatibility_date": "2026-11-01",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"services": [
+		// Self-reference (name must match "name" above). See https://opennext.js.org/cloudflare/caching
+		{ "binding": "WORKER_SELF_REFERENCE", "service": "cvascender" }
+	],
+	// Cloudflare has no permanent disk, so the built-in local accounts are off.
+	// "Sign in" appears once Supabase is set up (SUPABASE_URL + SUPABASE_ANON_KEY
+	// added in the Cloudflare dashboard → Workers → cvascender → Settings → Variables).
+	"vars": { "LOCAL_ACCOUNTS": "off" },
+	"observability": { "enabled": true }
+}
