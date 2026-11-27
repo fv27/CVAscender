@@ -27,7 +27,6 @@ Most students only hear about a handful of these through school. CVAscender puts
 | **Website** | Next.js 16, React 19, Tailwind CSS |
 | **Hosting** | Cloudflare Workers (via OpenNext) |
 | **Accounts and database** | Supabase (Postgres) |
-| **iPhone app** | SwiftUI, in [`/ios`](ios) |
 
 The matching engine (`lib/matching.js`) is plain, transparent rules rather than a black box, so every recommendation can be explained to the student.
 
